@@ -4,7 +4,7 @@ class Hobbit {
     this.age = 0;
     this.old = false;
     this.hasRing = true;
-  }
+  };
 
   celebrateBirthday() {
     this.age++;
@@ -18,7 +18,7 @@ class Hobbit {
     if (this.age >= 101) {
         this.old = true;
     };
-  }
+  };
 
   getRing() {
     if (this.name === 'Frodo') {
@@ -27,8 +27,8 @@ class Hobbit {
     } else {
       this.hasRing = false;
       return 'You can\'t have it!';
-    }
-  }
-}
+    };
+  };
+};
 
 module.exports = Hobbit;
