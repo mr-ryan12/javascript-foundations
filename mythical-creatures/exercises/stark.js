@@ -19,9 +19,9 @@ class Stark {
     };
   };
 
-  callDirewolf(wolf) {
-    var direwolf = new Direwolf(wolf, this.location);
-    direwolf.starksToProtect.push(this);
+  callDirewolf(wolfName) {
+    var direwolf = new Direwolf(wolfName, 'Riverlands'); // or (wolfName, this.location)
+    direwolf.starksToProtect.push(new Stark({name: 'Arya', area: 'Riverlands'})); // or direwolf.starksToProtect.push(this);
     this.safe = true;
     return direwolf;
   };
