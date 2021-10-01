@@ -3,25 +3,25 @@ class Ogre {
     this.name = ogre.name;
     this.home = ogre.abode || 'Swamp';
     this.swings = 0;
-  }
+  };
 
   encounter(human) {
     human.encounterCounter++;
-    if (human.encounterCounter > 1 && human.encounterCounter % 3 === 0) {
+    if (human.encounterCounter % 3 === 0) {
       this.swings++;
     }
-    if (human.encounterCounter > 1 && human.encounterCounter % 6 === 0) {
+    if (this.swings === 2) {
       human.knockedOut = true;
-    }
-  }
+    };
+  };
 
   swingAt() {
     this.swings++;
-  }
+  };
 
   apologize(human) {
     human.knockedOut = false;
-  }
-}
+  };
+};
 
 module.exports = Ogre;
