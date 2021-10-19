@@ -7,12 +7,13 @@ class Craft {
 
   completeCraft() {
     this.completed = true;
+    
     return 'All done! It looks great!';
   }
 
   calculateProjectTotal() {
-    var canvasPrice = this.materials[0].num1 * this.materials[0].num2;
-    var paintPrice = this.materials[1].num1 * this.materials[1].num2;
+    var canvasPrice = this.materials[0].price * this.materials[0].amount;
+    var paintPrice = this.materials[1].price * this.materials[1].amount;
     var total = canvasPrice + paintPrice;
 
     return total;
