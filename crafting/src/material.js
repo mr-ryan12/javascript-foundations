@@ -1,9 +1,24 @@
 class Material {
-  constructor(canvas, num1, num2, sheets) {
-    this.canvas = canvas;
-    this.num1 = num1;
-    this.num2 = num2;
-    this.sheets = sheets;
+  constructor(name, price, amount, units) {
+    this.name = name;
+    this.price = price;
+    this.amount = amount;
+    this.units = units;
+  }
+
+  useMaterial(amount) {
+    this.amount -= amount;
+    if (this.amount <= 0) {
+      return `You don't have enough ${this.name}! Try using ${this.amount + amount} ${this.units} or less.`
+    }
+    
+    return `You now have ${this.amount} ${this.units} of ${this.name} left.`;
+  }
+
+  calculateMaterialCost() {
+    var totalCost = this.price * this.amount;
+
+    return totalCost;
   }
 }
 
